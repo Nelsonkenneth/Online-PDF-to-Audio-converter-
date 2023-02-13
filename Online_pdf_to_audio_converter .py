@@ -18,9 +18,9 @@ for uploaded_file in uploaded_files:
     bytes_data = uploaded_file.read()
     st.write("filename:", uploaded_file.name)
 
-    pdf_file = BytesIO(bytes_data)
+    pdf_file = BytesIO(bytes_data) # just to try
     pdffile = PyPDF2.PdfFileReader(pdf_file)
-    no_of_pages = pdffile.getNumPages()
+    no_of_pages = pdffile.getNumPages()# hey yo
 
     string_words = ''
     for pages in range(no_of_pages):
@@ -29,6 +29,7 @@ for uploaded_file in uploaded_files:
         content = page.extractText()
         textonly = re.findall(r'[a-zA-Z0-9]+', content)
         string_words =  " ".join(textonly)
+        
         print(string_words)
 
     from googletrans import LANGUAGES
