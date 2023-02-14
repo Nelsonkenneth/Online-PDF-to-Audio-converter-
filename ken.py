@@ -1,3 +1,0 @@
-print("Hallo")
-hbvuvs
-prinbudv
